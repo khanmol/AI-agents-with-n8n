@@ -1,0 +1,247 @@
+{
+  "name": "Google Sheets MCP",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "d581c903-9119-4260-a0ea-2e9213fdc458"
+      },
+      "type": "@n8n/n8n-nodes-langchain.mcpTrigger",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "ecd0c325-368f-4277-bbb6-65f494c28ba0",
+      "name": "MCP Server Trigger",
+      "webhookId": "d581c903-9119-4260-a0ea-2e9213fdc458"
+    },
+    {
+      "parameters": {
+        "description": "Retrieves rows from a Google Sheet",
+        "workflowId": {
+          "__rl": true,
+          "value": "fWwOikxjT9zuTtgP",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/fWwOikxjT9zuTtgP",
+          "cachedResultName": "Row Lookup"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "query_column": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('query_column', ``, 'string') }}",
+            "query_value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('query_value', ``, 'string') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "query_column",
+              "displayName": "query_column",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "query_value",
+              "displayName": "query_value",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        48,
+        208
+      ],
+      "id": "1dbfa00c-38bd-42b2-9006-4d675a84f429",
+      "name": "Call 'Row Lookup'"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1-MrBUC-dTBoONqgdVjLIiNaeLcAgx0EUF-UKH6Zi0jQ",
+          "mode": "list",
+          "cachedResultName": "volunteer index",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1-MrBUC-dTBoONqgdVjLIiNaeLcAgx0EUF-UKH6Zi0jQ/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1751920399,
+          "mode": "list",
+          "cachedResultName": "volunteer-lookup",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1-MrBUC-dTBoONqgdVjLIiNaeLcAgx0EUF-UKH6Zi0jQ/edit#gid=1751920399"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "row_number": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('row_number__using_to_match_', `The row number to match. Crucial: This must be a raw mathematical integer, NOT a string. Do not wrap this value in quotation marks.`, 'number') }}",
+            "Name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', ``, 'string') }}",
+            "First Name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('First_Name', ``, 'string') }}",
+            "Last Name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Last_Name', ``, 'string') }}",
+            "Phone": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Phone', ``, 'string') }}",
+            "Email": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Email', ``, 'string') }}",
+            "Events": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Events', ``, 'string') }}",
+            "Manager": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Manager', ``, 'string') }}",
+            "Active": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Active', ``, 'string') }}"
+          },
+          "matchingColumns": [
+            "row_number"
+          ],
+          "schema": [
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "First Name",
+              "displayName": "First Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Last Name",
+              "displayName": "Last Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Phone",
+              "displayName": "Phone",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Events",
+              "displayName": "Events",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Manager",
+              "displayName": "Manager",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Active",
+              "displayName": "Active",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        240,
+        176
+      ],
+      "id": "70f66311-2489-43fb-b49d-8a8759a903ef",
+      "name": "Update row in sheet in Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "wNiFJTQEk3UXhGgQ",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Call 'Row Lookup'": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update row in sheet in Google Sheets": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "2f1cad66-46e5-41ef-82a5-c47a91114dce",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "d2522955cf9f97901d6cefd0358b6e14a8484bf4e2643e8158f1c4449bed5149"
+  },
+  "nodeGroups": [],
+  "id": "wKb7cTpMXYPfOF2T",
+  "tags": []
+}

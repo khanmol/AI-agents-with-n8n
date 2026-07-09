@@ -1,0 +1,117 @@
+{
+  "name": "Volunteer Lookup",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        0,
+        0
+      ],
+      "id": "3c29ae5d-3832-427f-b0ff-24403dd13a41",
+      "name": "When chat message received",
+      "webhookId": "9ab64bb5-5baf-4808-b618-1d7229b98a7c"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "You are a helpful assistant\n\n##Column Headings:\n- Name\t\n- First Name\t\n- Last Name\t\n- Phone\t\n- Email\t\n- Events\t\n- Manager\t\n- Active"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        208,
+        0
+      ],
+      "id": "75ff95a7-b065-430f-b436-b062a55742f7",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOllama",
+      "typeVersion": 1,
+      "position": [
+        208,
+        160
+      ],
+      "id": "0b213b01-dd35-41aa-91e7-238667dce3c9",
+      "name": "Ollama Chat Model",
+      "credentials": {
+        "ollamaApi": {
+          "id": "NeA6RvHUYtEkvBpY",
+          "name": "Ollama account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "endpointUrl": "http://localhost:5678/mcp-test/d581c903-9119-4260-a0ea-2e9213fdc458",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.mcpClientTool",
+      "typeVersion": 1.4,
+      "position": [
+        352,
+        208
+      ],
+      "id": "ba6f39c3-8ad5-44c1-a4ff-388c840341d9",
+      "name": "MCP Client"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ollama Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MCP Client": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "d8be6f54-2dc6-492d-ac94-165e79e9edd3",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "d2522955cf9f97901d6cefd0358b6e14a8484bf4e2643e8158f1c4449bed5149"
+  },
+  "nodeGroups": [],
+  "id": "09UGZSY7H7u5CVgi",
+  "tags": []
+}
