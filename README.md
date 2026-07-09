@@ -1,6 +1,5 @@
 
 # Build AI Agents and Automate Workflows with n8n
-<img width="120" height="65" alt="Screenshot 2026-07-09 at 23 37 10" src="https://github.com/user-attachments/assets/ea62028b-3854-409e-be1c-1d8beddea49a" />
 
 This project showcases advanced AI-powered workflow automation built using **n8n**. Developed as a capstone for the LinkedIn Learning course *"Build AI Agents and Automate Workflows with n8n,"* this repository demonstrates how to bridge the gap between large language models (LLMs) and everyday business tools. 
 
@@ -31,7 +30,11 @@ Modern business processes require dynamic, context-aware automation. This projec
 The core of this project is an **AI-powered Slackbot** that acts as a virtual assistant. Users can chat with the bot in Slack, asking it to retrieve specific data from Google Sheets, filter results, or append new data—all through conversational prompts.
 
 ---
+## Screenshots
 
+<img width="600" height="300" alt="Screenshot 2026-07-09 at 23 37 10" src="https://github.com/user-attachments/assets/ea62028b-3854-409e-be1c-1d8beddea49a" />
+
+---
 ## Key Features
 
 - **Natural Language Slackbot:** Users can send messages to a Slack channel or via DM. The AI agent parses the intent (e.g., "Find all pending invoices for Acme Corp") and responds dynamically.
