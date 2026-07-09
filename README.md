@@ -1,5 +1,6 @@
 
 # Build AI Agents and Automate Workflows with n8n
+<img width="120" height="65" alt="Screenshot 2026-07-09 at 23 37 10" src="https://github.com/user-attachments/assets/ea62028b-3854-409e-be1c-1d8beddea49a" />
 
 This project showcases advanced AI-powered workflow automation built using **n8n**. Developed as a capstone for the LinkedIn Learning course *"Build AI Agents and Automate Workflows with n8n,"* this repository demonstrates how to bridge the gap between large language models (LLMs) and everyday business tools. 
 
